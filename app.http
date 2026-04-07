@@ -1,0 +1,107 @@
+@url=http://localhost:3000
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkRpYXNAZXhhbXBsZS5jb20iLCJzdWIiOjEsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3NzU1MjQ2MzQsImV4cCI6MTc3NTUyNDkzNH0.RtYScXhAk7d4861yHAEO_gqi8si_yIPDW0qWeS_q4WY
+### --- ENDPOINTS FOR DEVELOPERS RESOURCES ---
+GET {{url}}/developers
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/developers/8
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}/developers
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "CD Projekt Red 2"
+}
+
+###
+PATCH {{url}}/developers/8
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "CD Projekt Red Original"
+}
+
+###
+DELETE {{url}}/developers/8
+Authorization: Bearer {{token}}
+
+
+### --- ENDPOINTS FOR GAMES RESOURCES ---
+GET {{url}}/games
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/games/5
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}/games
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "The Witcher 2: Update",
+  "releaseDate": "2015-05-19",
+  "developerId": 8
+}
+
+###
+PATCH {{url}}/games/5
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "The Witcher 2: Update"
+}
+
+###
+DELETE {{url}}/games/2
+Authorization: Bearer {{token}}
+
+### --- ENDPOINTS FOR USERS RESOURCES ---
+GET {{url}}/users
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/users/1
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}/users
+Content-Type: application/json
+
+{
+  "username": "Dias",
+  "email": "Dias@example.com",
+  "password": "password123
+
+###
+PATCH {{url}}/users/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "role": "admin"
+}
+
+###
+DELETE {{url}}/users/1
+Authorization: Bearer {{token}}
+
+### --- ENDPOINTS FOR TESTING AUTH ---
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "Dias@example.com",
+  "password": "password123"
+}
+
+###
+GET {{url}}/auth/profile
+Authorization: Bearer {{token}}
