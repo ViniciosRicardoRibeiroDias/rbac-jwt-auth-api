@@ -2,8 +2,21 @@ services:
     db:
         image: postgres
         restart: always
+        env_file:
+            - .env
         environment:
-            POSTGRES_USER: user
-            POSTGRES_PASSWORD: pswd
-            POSTGRES_DB: gamesDb
-        ports: [5433:5432]
+            POSTGRES_USER: ${DB_USERNAME}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_DB: ${DB_DATABASE}
+        ports:
+            - '${DB_PORT}:5432'
+
+    api:
+        build: .
+        container_name: rbac-jwt-auth-api
+        ports:
+            - '3000:3000'
+        env_file:
+            - .env
+        depends_on:
+            - db

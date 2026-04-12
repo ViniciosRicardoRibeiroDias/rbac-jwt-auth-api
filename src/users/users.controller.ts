@@ -6,6 +6,7 @@ import {
     Patch,
     Param,
     Delete,
+    UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -13,6 +14,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Public } from '../auth/public.decorator';
 import { Roles } from './user-roles.decorator';
 import { UserRole } from './enums/user-role.enum';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('users')
 export class UsersController {
@@ -26,17 +28,21 @@ export class UsersController {
 
     @Get()
     @Roles(UserRole.ADMIN)
+    @UseGuards(JwtAuthGuard)
     findAll() {
         return this.usersService.findAll();
     }
 
     @Get(':id')
     @Roles(UserRole.USER)
+    @UseGuards(JwtAuthGuard)
     findOne(@Param('id') id: string) {
         return this.usersService.findOne(+id);
     }
 
     @Patch(':id')
+    @Roles(UserRole.USER)
+    @UseGuards(JwtAuthGuard)
     async update(
         @Param('id') id: string,
         @Body() updateUserDto: UpdateUserDto,
@@ -44,8 +50,9 @@ export class UsersController {
         return await this.usersService.update(+id, updateUserDto);
     }
 
-    @Roles(UserRole.ADMIN)
+    @Roles(UserRole.USER)
     @Delete(':id')
+    @UseGuards(JwtAuthGuard)
     async remove(@Param('id') id: string) {
         await this.usersService.remove(+id);
         return `User (id: ${id}) deleted successfully`;

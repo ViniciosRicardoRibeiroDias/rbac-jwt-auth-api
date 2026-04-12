@@ -1,11 +1,11 @@
 @url=http://localhost:3000
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkRpYXNAZXhhbXBsZS5jb20iLCJzdWIiOjEsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3NzU1MjQ2MzQsImV4cCI6MTc3NTUyNDkzNH0.RtYScXhAk7d4861yHAEO_gqi8si_yIPDW0qWeS_q4WY
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOjEsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3NzYwMDE1NjgsImV4cCI6MTc3NjAwMTg2OH0.AHC4N482vl_2HrfA8Xyd2Jgxgd6DOeyVII9E-grVqKA
 ### --- ENDPOINTS FOR DEVELOPERS RESOURCES ---
 GET {{url}}/developers
 Authorization: Bearer {{token}}
 
 ###
-GET {{url}}/developers/8
+GET {{url}}/developers/1
 Authorization: Bearer {{token}}
 
 ###
@@ -18,7 +18,7 @@ Authorization: Bearer {{token}}
 }
 
 ###
-PATCH {{url}}/developers/8
+PATCH {{url}}/developers/1
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -27,7 +27,7 @@ Authorization: Bearer {{token}}
 }
 
 ###
-DELETE {{url}}/developers/8
+DELETE {{url}}/developers/1
 Authorization: Bearer {{token}}
 
 
@@ -36,7 +36,7 @@ GET {{url}}/games
 Authorization: Bearer {{token}}
 
 ###
-GET {{url}}/games/5
+GET {{url}}/games/1
 Authorization: Bearer {{token}}
 
 ###
@@ -45,13 +45,13 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "name": "The Witcher 2: Update",
+  "name": "The Witcher 3",
   "releaseDate": "2015-05-19",
-  "developerId": 8
+  "developerId": 2
 }
 
 ###
-PATCH {{url}}/games/5
+PATCH {{url}}/games/2
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -76,9 +76,10 @@ POST {{url}}/users
 Content-Type: application/json
 
 {
-  "username": "Dias",
-  "email": "Dias@example.com",
-  "password": "password123
+  "username": "Test",
+  "email": "test@example.com",
+  "password": "123456789"
+}
 
 ###
 PATCH {{url}}/users/1
@@ -98,8 +99,8 @@ POST {{url}}/auth/login
 Content-Type: application/json
 
 {
-  "email": "Dias@example.com",
-  "password": "password123"
+  "email": "test@example.com",
+  "password": "123456789"
 }
 
 ###

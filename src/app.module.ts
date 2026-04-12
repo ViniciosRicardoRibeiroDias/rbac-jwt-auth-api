@@ -22,10 +22,6 @@ import { RolesGuard } from './users/user-roles.guard';
             imports: [ConfigModule],
             inject: [ConfigService],
             useFactory: (configService: ConfigService) => {
-                console.log('USERNAME:', configService.get('DB_USERNAME'));
-                console.log('PASSWORD:', configService.get('DB_PASSWORD'));
-                console.log(configService);
-
                 return {
                     type: 'postgres',
                     host: configService.get('DB_HOST'),
