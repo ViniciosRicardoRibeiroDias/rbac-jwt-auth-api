@@ -34,8 +34,8 @@ dockercompose up --build
 
 ```json
 {
-    "email": "user@email.com",
-    "password": "123456"
+    "email": "test@example.com",
+    "password": "123456789"
 }
 ```
 
