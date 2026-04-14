@@ -25,7 +25,7 @@ git clone https://github.com/your-username/rbac-jwt-auth-api.git
 cd rbac-jwt-auth-api
 
 cp .env.example .env
-dockercompose up --build
+docker compose up --build
 ```
 
 ## 🔐 Example Endpoint
