@@ -1,5 +1,5 @@
 @url=http://localhost:3000
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOjEsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3NzYwMDE1NjgsImV4cCI6MTc3NjAwMTg2OH0.AHC4N482vl_2HrfA8Xyd2Jgxgd6DOeyVII9E-grVqKA
+@token=
 ### --- ENDPOINTS FOR DEVELOPERS RESOURCES ---
 GET {{url}}/developers
 Authorization: Bearer {{token}}
