@@ -30,12 +30,13 @@ docker compose up --build
 
 ## 🔐 Example Endpoint
 
-### POST /auth/login
+### POST /users
 
 ```json
 {
-    "email": "test@example.com",
-    "password": "123456789"
+  "username": "Test",
+  "email": "test@example.com",
+  "password": "123456789"
 }
 ```
 
